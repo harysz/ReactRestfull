@@ -16,6 +16,7 @@ class FullPost extends Component {
                 .then(response => {
                     this.setState({loadedPost : response.data})
                 })
+                .catch(error =>console.log(error));
             }
             
         }
