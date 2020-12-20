@@ -1,4 +1,3 @@
-import Axios from 'axios';
 import React, { Component } from 'react';
 
 import axios from 'axios';
@@ -11,7 +10,15 @@ class NewPost extends Component {
         author: 'Max'
     }
     postDataHandler =()=>{
-        axios.post();
+        const post ={
+            title : this.state.title,
+            content: this.state.content,
+            author:this.state.author
+        }
+        axios.post('https://jsonplaceholder.typicode.com/posts', post)
+        .then(response =>{
+            console.log(response);
+        });
     }
     render () {
         return (
